@@ -2,12 +2,19 @@
 
 import React, { useState } from "react";
 
+// type interface
+// Microsoft => intarface
+interface Todo {
+  title: string;
+  completed: boolean;
+}
+
 export const TodoApp = () => {
   const [title, setTitle] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const handleOnClick = () => {
-    const newTodos = [...todos, { title: "test1" }];
+    const newTodos: Todo[] = [...todos, { title: "test1", completed: false }];
     setTodos(newTodos);
   };
 
